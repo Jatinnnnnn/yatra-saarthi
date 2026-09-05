@@ -1,0 +1,11 @@
+name,city,district,lat,lng,category,description_en,open_time,close_time,entry_cost,is_indoor,is_sheltered,base_crowd_index,tags
+Triveni Ghat,Rishikesh,Dehradun,30.0867,78.2669,TEMPLE,"Quieter ghat with evening aarti, riverside seating",05:00,21:00,0,0,1,48,"temple,ghat,aarti,quiet"
+Lakshman Jhula,Rishikesh,Dehradun,30.0869,78.2676,LANDMARK,"Iconic suspension bridge over the Ganga with cafes around",00:00,23:59,0,0,1,88,"landmark,bridge,photo,crowded"
+Ram Jhula,Rishikesh,Dehradun,30.0945,78.2713,LANDMARK,"Suspension bridge with ashrams and Ganga views on both banks",00:00,23:59,0,0,1,76,"landmark,bridge,photo"
+Beatles Ashram,Rishikesh,Dehradun,30.0951,78.2865,MUSEUM,"Abandoned 1968 ashram with dome ruins and graffiti galleries",08:00,17:00,250,1,1,35,"museum,heritage,photo,indoor"
+Neelkanth Mahadev,Rishikesh,Dehradun,30.1571,78.4519,TEMPLE,"Shiva temple at 1330m reached by an uphill forest drive",05:00,19:00,0,0,0,70,"temple,trek,scenic,uphill"
+Vashishtha Cave,Rishikesh,Dehradun,30.1382,78.3510,NATURE,"Riverside meditation cave with a sheltered approach",06:00,18:00,50,1,1,20,"meditation,quiet,riverside,rain-safe"
+Rajiv Nagar Beach,Rishikesh,Dehradun,30.0810,78.2600,NATURE,"Quiet sandy riverside stretch locals use for evening walks",06:00,19:00,0,0,0,15,"nature,riverside,quiet,sunset"
+Ganga Rafting Point,Rishikesh,Dehradun,30.1143,78.3020,ADVENTURE,"9 km Grade II white-water rafting stretch at Brahmapuri",07:00,15:00,1400,0,0,42,"adventure,rafting,river,water"
+Har Ki Pauri,Haridwar,Haridwar,29.9457,78.1642,TEMPLE,"Most sacred ghat on the Ganga, evening Ganga Aarti at sunset",06:00,21:00,0,0,1,95,"temple,ghat,aarti,crowded"
+Mansa Devi Ropeway,Haridwar,Haridwar,29.9474,78.1601,TEMPLE,"Cable car to hilltop Shakti temple with long peak queues",08:00,17:00,1570,0,0,90,"temple,ropeway,queue,viewpoint"

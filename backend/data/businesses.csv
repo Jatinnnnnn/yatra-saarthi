@@ -1,0 +1,11 @@
+name,type,city,district,price_min,price_max,price_unit,rating,is_indoor,tags,description_en
+Ganga View Homestay,HOMESTAY,Rishikesh,Dehradun,2200,2800,NIGHT,4.8,1,"homestay,river,family","Family-run homestay near Triveni Ghat with home-cooked pahadi meals"
+Doon Heritage Homestay,HOMESTAY,Dehradun,Dehradun,1800,2400,NIGHT,4.6,1,"homestay,heritage","Colonial-style homestay near Clock Tower with Garhwali breakfast"
+Pahadi Thali House,RESTAURANT,Rishikesh,Dehradun,180,320,MEAL,4.6,1,"food,veg,local","Authentic Garhwali thali - kafuli, bhatt ki churkani, mandua roti"
+Chotiwala Cafe,RESTAURANT,Rishikesh,Dehradun,220,600,MEAL,4.5,1,"food,cafe,indoor","Long-running riverside cafe with indoor seating"
+Himalayan Pottery Workshop,WORKSHOP,Rishikesh,Dehradun,600,900,SESSION,4.9,1,"workshop,craft,indoor","Hands-on clay wheel session with a third-generation local potter"
+Garhwali Kitchen Cooking Class,WORKSHOP,Dehradun,Dehradun,800,1100,SESSION,4.8,1,"workshop,food,indoor","Cook a full Garhwali meal in a local home kitchen"
+Rishikesh Local Guide Suresh,GUIDE,Rishikesh,Dehradun,800,1500,DAY,4.9,0,"guide,local,culture","Government-registered guide, Hindi English Garhwali"
+Doon Valley Taxi Union,TAXI,Dehradun,Dehradun,600,4500,TRIP,4.4,0,"taxi,transport","Registered local drivers with fixed transparent rates"
+Ganga Aarti Seva Boat,ADVENTURE_OP,Haridwar,Haridwar,200,400,PERSON,4.3,0,"boat,aarti,river","Shared boat during evening aarti - view from the river"
+Uttarakhand Handicraft Emporium,HANDICRAFT,Haridwar,Haridwar,150,4000,ITEM,4.5,1,"shopping,handicraft,local","Cooperative of 40 village artisans - ringal baskets and Aipan art"

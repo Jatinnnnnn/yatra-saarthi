@@ -1,4 +1,4 @@
-"""SQLite connection + schema. Phase 2."""
+"""SQLite connection + schema. Phase 6 (pois + businesses + bookings)."""
 import sqlite3
 from pathlib import Path
 
@@ -7,7 +7,7 @@ DB_PATH = Path(__file__).resolve().parent.parent / "yatra.db"
 
 def get_conn():
     conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row      # rows ko dict jaisa bana deta hai
+    conn.row_factory = sqlite3.Row
     return conn
 
 
@@ -30,6 +30,32 @@ def init_db():
             is_sheltered     INTEGER DEFAULT 0,
             base_crowd_index INTEGER DEFAULT 0,
             tags             TEXT
+        )
+    """)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS businesses (
+            id             INTEGER PRIMARY KEY AUTOINCREMENT,
+            name           TEXT NOT NULL UNIQUE,
+            type           TEXT,
+            city           TEXT,
+            district       TEXT,
+            price_min      REAL,
+            price_max      REAL,
+            price_unit     TEXT,
+            rating         REAL,
+            is_indoor      INTEGER DEFAULT 0,
+            tags           TEXT,
+            description_en TEXT
+        )
+    """)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS bookings (
+            id            INTEGER PRIMARY KEY AUTOINCREMENT,
+            business_name TEXT NOT NULL,
+            amount        REAL NOT NULL,
+            platform_fee  REAL,
+            local_share   REAL,
+            created_at    TEXT DEFAULT CURRENT_TIMESTAMP
         )
     """)
     conn.commit()

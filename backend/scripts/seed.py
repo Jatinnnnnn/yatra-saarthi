@@ -1,15 +1,20 @@
-"""CSV → SQLite. Chalao:  python -m scripts.seed   (backend/ folder se)"""
+"""CSV -> SQLite. Phase 6 (pois + businesses). Chalao: python -m scripts.seed"""
+import csv
+from pathlib import Path
+
 from app.db import get_conn, init_db
-from app.data_loader import load_pois     # tumhara Phase 1 wala loader
+from app.data_loader import load_pois
+
+BIZ_CSV = Path(__file__).resolve().parent.parent / "data" / "businesses.csv"
 
 
 def seed():
     init_db()
-    pois = load_pois()
     conn = get_conn()
-    conn.execute("DELETE FROM pois")      # purana data saaf → fresh start
+
+    conn.execute("DELETE FROM pois")
     n = 0
-    for p in pois:
+    for p in load_pois():
         conn.execute("""
             INSERT INTO pois (name, city, district, lat, lng, category,
                               description_en, open_time, close_time, entry_cost,
@@ -23,9 +28,32 @@ def seed():
             p.get("base_crowd_index"), p.get("tags"),
         ))
         n += 1
+
+    m = 0
+    if BIZ_CSV.exists():
+        conn.execute("DELETE FROM businesses")
+        with open(BIZ_CSV, encoding="utf-8-sig") as f:
+            for r in csv.DictReader(f):
+                if not (r.get("name") or "").strip():
+                    continue
+                conn.execute("""
+                    INSERT INTO businesses (name, type, city, district, price_min,
+                                            price_max, price_unit, rating, is_indoor,
+                                            tags, description_en)
+                    VALUES (?,?,?,?,?,?,?,?,?,?,?)
+                """, (
+                    r["name"].strip(), (r.get("type") or "").strip(),
+                    (r.get("city") or "").strip(), (r.get("district") or "").strip(),
+                    float(r.get("price_min") or 0), float(r.get("price_max") or 0),
+                    (r.get("price_unit") or "").strip(), float(r.get("rating") or 0),
+                    int(r.get("is_indoor") or 0), (r.get("tags") or "").strip(),
+                    (r.get("description_en") or "").strip(),
+                ))
+                m += 1
+
     conn.commit()
     conn.close()
-    print(f"[seed] {n} POIs database me daal diye → yatra.db")
+    print(f"[seed] {n} POIs + {m} businesses -> yatra.db")
 
 
 if __name__ == "__main__":
